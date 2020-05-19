@@ -67,23 +67,23 @@ const Page = () => {
 
   const [code, setCode] = useState(
     `{
-    "name": "Chill Hip Hop",
-    "seed": {
-      "tracks": ["Walk it like I talk it"],
-      "artists": ["Migos", "Rae Sremmurd", "Juice WRLD"]
+    name: "Chill Hip Hop",
+    seed: {
+      tracks: ["Walk it like I talk it"],
+      artists: ["Migos", "Rae Sremmurd", "Juice WRLD"]
     },
-    "danceability": { 
-      "min": 10
+    danceability: { 
+      min: 10
     },
-    "popularity": {
-      "max": 80,
-      "min": 30
+    popularity: {
+      max: 80,
+      min: 30
     },
-    "speechiness": { 
-      "max": 40
+    speechiness: { 
+      max: 40
     },
-    "energy": {
-      "min": 50
+    energy: {
+      min: 50
     }
 }
 
