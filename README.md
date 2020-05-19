@@ -10,7 +10,7 @@ skrrt gives me the music I ask for - it takes in a filter for music in JSON like
     "seed": {
         "tracks": ["A lot", "Middle Child"],
         "artists": ["21 Savage", "J Cole"],
-		},
+    },
     "key": "minor",
     "danceability": {
         "min": 10
