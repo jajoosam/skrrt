@@ -1,0 +1,17 @@
+{
+  "name": "Sunny Swagger",
+  "seed": {
+    "artists": ["Yung Gravy", "G-Eazy", "Chris Webby"],
+    "genres": ["Hip Hop"]
+  },
+  "energy": {
+    "max": 70,
+    "min": 30
+  },
+  "mood": {
+    "min": 50
+  },
+  "tempo": {
+    "min": 120
+  }
+}
