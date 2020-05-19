@@ -5,6 +5,7 @@ dependencies:
   '@next/mdx': 9.4.1_@mdx-js+loader@1.6.1
   axios: 0.19.2
   didyoumean2: 4.0.0
+  dotenv: 8.2.0
   emotion: 10.0.27
   fetch: 1.1.0
   mdx: 0.3.1
@@ -2810,6 +2811,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-uEUyaDKoSQ1M4Oq8l45hSE26SnTxL6snNnqvK/VWx5wJhmff5z0FUVJDKDanor/6w3kzE3i7XZOk+7wC0EXr1A==
+  /dotenv/8.2.0:
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
   /duplexify/3.7.1:
     dependencies:
       end-of-stream: 1.4.4
@@ -7049,6 +7056,7 @@ specifiers:
   '@next/mdx': ^9.4.1
   axios: ^0.19.2
   didyoumean2: ^4.0.0
+  dotenv: ^8.2.0
   emotion: ^10.0.27
   fetch: ^1.1.0
   mdx: ^0.3.1
