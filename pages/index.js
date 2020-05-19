@@ -30,6 +30,22 @@ const Home = () => (
     >
       🤟 skrrt
     </h1>
+    <p
+      className={css`
+        text-align: center;
+        & > a {
+          color: #2d96ff;
+        }
+      `}
+    >
+      <a href="https://docs.skrrt.fun" target="_blank">
+        docs
+      </a>{" "}
+      |{" "}
+      <a href="https://github.com/jajoosam/skrrt" target="_blank">
+        github
+      </a>
+    </p>
     <br />
     <img
       src="/example.png"
