@@ -32,7 +32,7 @@ const Home = () => (
     </h1>
     <br />
     <img
-      src="/skrrt.png"
+      src="/example.png"
       className={css`
         display: block;
         margin: 1em auto;
