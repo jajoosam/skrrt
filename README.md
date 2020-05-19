@@ -3,9 +3,7 @@
 ![logo](public/meta.png)
 I spend several hours every week curating my music - I can't rely on Spotify recommendations to give me what I want. I want to be able to tell something the music I like instead of it predicting what I might like, very ambiguously.
 
-skrrt gives me the music I ask for.
-
-Skrrt takes in a filter for music in JSON like this, passes it on to the spotify API, and gets recommendations.
+skrrt gives me the music I ask for - it takes in a filter for music in JSON like this, passes it on to the spotify API, and gets recommendations.
 ```json
 {
     "name": "Study Music",
@@ -14,17 +12,17 @@ Skrrt takes in a filter for music in JSON like this, passes it on to the spotify
 	    "artists": ["21 Savage", "J Cole"],
 		},
     "key": "minor",
-    "danceability": { // 💃
+    "danceability": {
         "min": 10
     },
-    "popularity": { // 👀
+    "popularity": {
         "max": 80,
         "min": 30
     },
-    "speechiness": { // 🎤
+    "speechiness": {
         "max": 40
     },
-    "energy": { // 🔥
+    "energy": {
         "min": 50
     }
 }
