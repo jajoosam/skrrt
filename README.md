@@ -8,8 +8,8 @@ skrrt gives me the music I ask for - it takes in a filter for music in JSON like
 {
     "name": "Study Music",
     "seed": {
-		"tracks": ["A lot", "Middle Child"],
-	    "artists": ["21 Savage", "J Cole"],
+        "tracks": ["A lot", "Middle Child"],
+        "artists": ["21 Savage", "J Cole"],
 		},
     "key": "minor",
     "danceability": {
