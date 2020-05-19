@@ -1,5 +1,5 @@
 export default async (req, res) => {
-  if (id === "skrrt" || id === "sandbox") {
+  if (req.query.id === "skrrt" || req.query.id === "sandbox") {
     res.writeHead(302, {
       Location: "https://skrrt.fun/meta.png",
     });
