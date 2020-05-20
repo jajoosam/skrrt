@@ -157,7 +157,7 @@ const Page = () => {
           <div
             className={css`
               display: flex;
-              @media (max-width: 1300px) {
+              @media (max-width: 1000px) {
                 display: block;
               }
               justify-content: space-around;
@@ -179,7 +179,11 @@ const Page = () => {
                 </div>
               )}
             </div>
-            <div className={css``}>
+            <div
+              className={css`
+                flex: 2;
+              `}
+            >
               <YouTube
                 onReady={(target) => {
                   setPlayer(target.target);
@@ -193,7 +197,8 @@ const Page = () => {
                 className={css`
                   filter: ${filter.morph};
                   max-width: 600px;
-                  @media (max-width: 1300px) {
+                  width: 100%;
+                  @media (max-width: 1000px) {
                     margin-top: 2em;
                     width: 100%;
                   }
