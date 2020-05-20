@@ -1,8 +1,8 @@
-const spotify = require("../../help/spotify.js");
+const spotify = require("../../utils/spotify.js");
 const axios = require("axios");
 const getClosest = require("didyoumean2").default;
 
-const genres = require("../../help/genres.json");
+const genres = require("../../utils/genres.json");
 
 export default async (req, res) => {
   // get access token if not already available. will be a cron job

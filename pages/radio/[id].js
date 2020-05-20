@@ -6,6 +6,7 @@ import { css } from "emotion";
 
 import Editor from "../../components/Editor";
 import Features from "../../components/Features";
+import Lyrics from "../../components/Lyrics";
 import Info from "../../components/Info";
 import Button from "../../components/Button";
 import Meta from "../../components/Meta";
@@ -76,6 +77,11 @@ const Page = ({ text, json, translated, id }) => {
           </Window>
           <Button onClick={newTrack}>run</Button>
           <Button onClick={remix}>remix</Button>
+          {track.id && json.lyrics && (
+            <div>
+              <Lyrics track={track} />
+            </div>
+          )}
         </div>
         <div className={css``}>
           <YouTube
@@ -112,8 +118,9 @@ const Page = ({ text, json, translated, id }) => {
 export default Page;
 
 export async function getServerSideProps(context) {
-  const { get } = require("../../help/store");
-  let { text, json, translated } = await get(context.params.id);
+  const { get } = require("../../utils/store");
+  let body = await get(context.params.id);
+  let { text, json, translated } = body.data;
   return {
     props: { text, json, translated, id: context.params.id },
   };

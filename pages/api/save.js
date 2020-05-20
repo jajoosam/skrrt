@@ -1,5 +1,5 @@
 const uniq = require("uniqid");
-import { set } from "../../help/store";
+import { set } from "../../utils/store";
 
 export default async (req, res) => {
   const id = uniq();

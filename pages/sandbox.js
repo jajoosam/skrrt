@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 
 import JSON5 from "json5";
 import YouTube from "react-youtube";
+import { HotKeys } from "react-hotkeys";
 import { css } from "emotion";
 
 import Editor from "../components/Editor";
 import Features from "../components/Features";
+import Lyrics from "../components/Lyrics";
 import Info from "../components/Info";
 import Button from "../components/Button";
 import Meta from "../components/Meta";
@@ -44,13 +46,6 @@ const Page = () => {
 
     let recommendations = await axios.post(`/api/recommend`, translated.filter);
     setTrack(recommendations.data[0]);
-    player.cuePlaylist({
-      listType: "search",
-      list: `${recommendations.data[0].name} ${recommendations.data[0].artists[0]}`,
-      suggestedQuality: "medium",
-    });
-
-    setTimeout(() => player.playVideo(), 1000);
   };
 
   const save = async () => {
@@ -101,80 +96,119 @@ const Page = () => {
     if (hydrated) localStorage.code = code;
     if (isJSON5(code)) setFilter(JSON5.parse(code));
   }, [code]);
+  useEffect(() => {
+    if (player) {
+      console.log(track);
+      player.cuePlaylist({
+        listType: "search",
+        list: `${track.name} ${track.artists[0]}`,
+        suggestedQuality: "medium",
+      });
+    }
+  }, [track]);
 
   let [filter, setFilter] = useState({});
 
-  return (
-    <div
-      className={css`
-        margin: 2em;
-        @media (max-width: 1300px) {
-          margin: 5px;
-        }
-      `}
-    >
-      <Head>
-        <title key="title">
-          Skrrt: {filter.name ? filter.name : "Sandbox"}
-        </title>
-        <Meta id="sandbox" name={"Sandbox"} type="sandbox" />
-      </Head>
-      <h2
-        className={css`
-          font-family: sans-serif;
-        `}
-      >
-        {filter.name}
-      </h2>
+  const keyMap = {
+    search: "s",
+  };
 
-      <div
+  const handlers = {
+    search: async () => {
+      const query = prompt(`What track do you want to play?`);
+      const body = await axios.post("/api/search", { query });
+      setTrack(body.data);
+    },
+  };
+
+  return (
+    <div>
+      <HotKeys
+        keyMap={keyMap}
+        handlers={handlers}
         className={css`
-          display: flex;
-          @media (max-width: 1300px) {
-            display: block;
+          &:focus {
+            outline: none;
           }
-          justify-content: space-around;
         `}
       >
         <div
           className={css`
-            flex-grow: 1;
+            margin: 2em;
+            @media (max-width: 1300px) {
+              margin: 5px;
+            }
           `}
         >
-          <Window>
-            <Editor value={code} onValueChange={(code) => setCode(code)} />
-          </Window>
-          <Button onClick={newTrack}>run</Button>
-          <Button onClick={save}>save</Button>
-        </div>
-        <div className={css``}>
-          <YouTube
-            onReady={(target) => {
-              setPlayer(target.target);
-            }}
-            onStateChange={(o) => {
-              if (o.data === 5) {
-                player.playVideo();
-              }
-            }}
-            onEnd={newTrack}
+          <Head>
+            <title key="title">
+              Skrrt: {filter.name ? filter.name : "Sandbox"}
+            </title>
+            <Meta id="sandbox" name={"Sandbox"} type="sandbox" />
+          </Head>
+          <h2
             className={css`
-              filter: ${filter.morph};
-              max-width: 600px;
-              @media (max-width: 1300px) {
-                margin-top: 2em;
-                width: 100%;
-              }
+              font-family: sans-serif;
             `}
-          />
-          {track.id && (
-            <div>
-              <Info track={track}></Info>
-              <Features id={track.id} />
+          >
+            {filter.name}
+          </h2>
+
+          <div
+            className={css`
+              display: flex;
+              @media (max-width: 1300px) {
+                display: block;
+              }
+              justify-content: space-around;
+            `}
+          >
+            <div
+              className={css`
+                flex-grow: 1;
+              `}
+            >
+              <Window>
+                <Editor value={code} onValueChange={(code) => setCode(code)} />
+              </Window>
+              <Button onClick={newTrack}>run</Button>
+              <Button onClick={save}>save</Button>
+              {track.id && filter.lyrics && (
+                <div>
+                  <Lyrics track={track} />
+                </div>
+              )}
             </div>
-          )}
+            <div className={css``}>
+              <YouTube
+                onReady={(target) => {
+                  setPlayer(target.target);
+                }}
+                onStateChange={(o) => {
+                  if (o.data === 5) {
+                    player.playVideo();
+                  }
+                }}
+                onEnd={newTrack}
+                className={css`
+                  filter: ${filter.morph};
+                  max-width: 600px;
+                  @media (max-width: 1300px) {
+                    margin-top: 2em;
+                    width: 100%;
+                  }
+                `}
+              />
+              {track.id && (
+                <div>
+                  <Info track={track}></Info>
+                  <Features id={track.id} />
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
+      </HotKeys>
     </div>
   );
 };

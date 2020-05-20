@@ -18,6 +18,7 @@ const EditorBla = ({ value, onValueChange }) => (
       background: #302658;
     `}
     textareaClassName={css`
+      caret-color: white;
       &:focus {
         outline: none;
       }

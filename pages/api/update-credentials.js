@@ -1,4 +1,4 @@
-const spotify = require("../../help/spotify.js");
+const spotify = require("../../utils/spotify.js");
 
 export default async (req, res) => {
   const data = await spotify.clientCredentialsGrant();

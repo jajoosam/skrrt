@@ -8,6 +8,5 @@ export const set = async (path, data) => {
 };
 
 export const get = async (path) => {
-  let body = await axios.get(`${url}/${path}`);
-  return body.data;
+  return axios.get(`${url}/${path}`);
 };
