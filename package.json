@@ -25,6 +25,7 @@
     "react-dom": "16.13.1",
     "react-hotkeys": "^2.0.0",
     "react-simple-code-editor": "^0.11.0",
+    "react-tooltip": "^4.2.6",
     "react-youtube": "^7.11.2",
     "spotify-web-api-node": "^4.0.0",
     "uniqid": "^5.2.0"

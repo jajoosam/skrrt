@@ -16,6 +16,7 @@ dependencies:
   react-dom: 16.13.1_react@16.13.1
   react-hotkeys: 2.0.0_react@16.13.1
   react-simple-code-editor: 0.11.0_react-dom@16.13.1+react@16.13.1
+  react-tooltip: 4.2.6_react-dom@16.13.1+react@16.13.1
   react-youtube: 7.11.2_react@16.13.1
   spotify-web-api-node: 4.0.0
   uniqid: 5.2.0
@@ -5966,6 +5967,21 @@ packages:
       react-dom: ^16.0.0
     resolution:
       integrity: sha512-xGfX7wAzspl113ocfKQAR8lWPhavGWHL3xSzNLeseDRHysT+jzRBi/ExdUqevSMos+7ZtdfeuBOXtgk9HTwsrw==
+  /react-tooltip/4.2.6_react-dom@16.13.1+react@16.13.1:
+    dependencies:
+      prop-types: 15.7.2
+      react: 16.13.1
+      react-dom: 16.13.1_react@16.13.1
+      uuid: 7.0.3
+    dev: false
+    engines:
+      node: '>=8'
+      npm: '>=5'
+    peerDependencies:
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    resolution:
+      integrity: sha512-KX/zCsPFCI8RuulzBX86U+Ur7FvgGNRBdb7dUu0ndo8Urinn48nANq9wfq4ABlehweQjPzLl7XdNAtLKza+I3w==
   /react-youtube/7.11.2_react@16.13.1:
     dependencies:
       fast-deep-equal: 3.1.1
@@ -7333,6 +7349,11 @@ packages:
     optional: true
     resolution:
       integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+  /uuid/7.0.3:
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg==
   /validate-npm-package-license/3.0.4:
     dependencies:
       spdx-correct: 3.1.0
@@ -7566,6 +7587,7 @@ specifiers:
   react-dom: 16.13.1
   react-hotkeys: ^2.0.0
   react-simple-code-editor: ^0.11.0
+  react-tooltip: ^4.2.6
   react-youtube: ^7.11.2
   spotify-web-api-node: ^4.0.0
   uniqid: ^5.2.0

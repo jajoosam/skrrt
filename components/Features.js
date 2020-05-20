@@ -2,6 +2,7 @@ import { css } from "emotion";
 import styled from "@emotion/styled";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import ReactTooltip from "react-tooltip";
 
 const Feature = styled.span`
   display: inline-block;
@@ -10,6 +11,18 @@ const Feature = styled.span`
   margin-bottom: 8px;
   margin-right: 15px;
 `;
+
+const FeatureLabel = ({ label, emoji }) => (
+  <span
+    data-place="bottom"
+    data-effect="solid"
+    data-arrow-color="#fff"
+    data-tip={label}
+  >
+    {emoji}
+  </span>
+);
+
 const Features = ({ id }) => {
   let [features, setFeatures] = useState({});
   useEffect(() => {
@@ -30,14 +43,23 @@ const Features = ({ id }) => {
         padding-top: 8px;
       `}
     >
-      👀 <Feature>{features.popularity}</Feature>
-      💃 <Feature>{features.danceability}</Feature>
-      🥁 <Feature>{features.tempo}</Feature>
-      🔥 <Feature>{features.energy}</Feature>
-      {features.valence > 50 ? "🙂" : "🙃"}{" "}
+      <ReactTooltip />
+      <FeatureLabel label="Popularity" emoji="👀" />{" "}
+      <Feature>{features.popularity}</Feature>
+      <FeatureLabel label="Danceability" emoji="💃" />{" "}
+      <Feature>{features.danceability}</Feature>
+      <FeatureLabel label="Tempo" emoji="🥁" />{" "}
+      <Feature>{features.tempo}</Feature>
+      <FeatureLabel label="Energy" emoji="🔥" />{" "}
+      <Feature>{features.energy}</Feature>
+      <FeatureLabel
+        label="Valence"
+        emoji={features.valence > 50 ? "🙂" : "🙃"}
+      />
       <Feature>{features.valence}</Feature>
-      🎤 <Feature>{features.speechiness}</Feature>
-      🔑{" "}
+      <FeatureLabel label="Speechiness" emoji="🎤" />{" "}
+      <Feature>{features.speechiness}</Feature>
+      <FeatureLabel label="Key" emoji="🔑" />{" "}
       <Feature>{`${
         ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"][
           features.key

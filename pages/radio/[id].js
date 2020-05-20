@@ -32,7 +32,7 @@ const Page = ({ text, json, translated, id }) => {
     // setTimeout(() => player.playVideo(), 1000);
   };
 
-  const remix = () => {
+  const edit = () => {
     localStorage.code = text;
     router.push(`/sandbox`);
   };
@@ -76,7 +76,7 @@ const Page = ({ text, json, translated, id }) => {
             <Editor value={text} onValueChange={() => {}} />
           </Window>
           <Button onClick={newTrack}>run</Button>
-          <Button onClick={remix}>remix</Button>
+          <Button onClick={edit}>edit</Button>
           {track.id && json.lyrics && (
             <div>
               <Lyrics track={track} />
