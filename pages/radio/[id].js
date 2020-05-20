@@ -101,6 +101,7 @@ const Page = ({ text, json, translated, id }) => {
             className={css`
               filter: ${json.morph};
               max-width: 600px;
+              border-radius: 10px;
               @media (max-width: 1000px) {
                 margin-top: 2em;
                 width: 100%;
