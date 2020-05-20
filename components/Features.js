@@ -18,6 +18,9 @@ const FeatureLabel = ({ label, emoji }) => (
     data-effect="solid"
     data-arrow-color="#fff"
     data-tip={label}
+    className={css`
+      user-select: none;
+    `}
   >
     {emoji}
   </span>
