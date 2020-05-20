@@ -41,7 +41,7 @@ const Page = ({ text, json, translated, id }) => {
     <div
       className={css`
         margin: 2em;
-        @media (max-width: 1300px) {
+        @media (max-width: 1000px) {
           margin: 5px;
         }
       `}
@@ -62,7 +62,7 @@ const Page = ({ text, json, translated, id }) => {
         className={css`
           display: flex;
           justify-content: space-around;
-          @media (max-width: 1300px) {
+          @media (max-width: 1000px) {
             display: block;
           }
         `}
@@ -83,7 +83,11 @@ const Page = ({ text, json, translated, id }) => {
             </div>
           )}
         </div>
-        <div className={css``}>
+        <div
+          className={css`
+            flex: 2;
+          `}
+        >
           <YouTube
             onReady={(target) => {
               setPlayer(target.target);
@@ -97,7 +101,7 @@ const Page = ({ text, json, translated, id }) => {
             className={css`
               filter: ${json.morph};
               max-width: 600px;
-              @media (max-width: 1300px) {
+              @media (max-width: 1000px) {
                 margin-top: 2em;
                 width: 100%;
               }

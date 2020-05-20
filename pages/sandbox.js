@@ -135,7 +135,7 @@ const Page = () => {
         <div
           className={css`
             margin: 2em;
-            @media (max-width: 1300px) {
+            @media (max-width: 1000px) {
               margin: 5px;
             }
           `}
@@ -198,6 +198,7 @@ const Page = () => {
                   filter: ${filter.morph};
                   max-width: 600px;
                   width: 100%;
+                  border-radius: 10px;
                   @media (max-width: 1000px) {
                     margin-top: 2em;
                     width: 100%;
