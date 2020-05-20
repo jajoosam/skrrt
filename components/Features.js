@@ -55,7 +55,7 @@ const Features = ({ id }) => {
       <FeatureLabel
         label="Valence"
         emoji={features.valence > 50 ? "🙂" : "🙃"}
-      />
+      />{" "}
       <Feature>{features.valence}</Feature>
       <FeatureLabel label="Speechiness" emoji="🎤" />{" "}
       <Feature>{features.speechiness}</Feature>
