@@ -9,6 +9,7 @@ import Features from "../../components/Features";
 import Info from "../../components/Info";
 import Button from "../../components/Button";
 import Meta from "../../components/Meta";
+import Window from "../../components/Window";
 
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -70,7 +71,9 @@ const Page = ({ text, json, translated, id }) => {
             flex-grow: 1;
           `}
         >
-          <Editor value={text} onValueChange={() => {}} />
+          <Window>
+            <Editor value={text} onValueChange={() => {}} />
+          </Window>
           <Button onClick={newTrack}>run</Button>
           <Button onClick={remix}>remix</Button>
         </div>

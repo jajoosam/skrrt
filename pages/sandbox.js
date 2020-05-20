@@ -10,6 +10,7 @@ import Features from "../components/Features";
 import Info from "../components/Info";
 import Button from "../components/Button";
 import Meta from "../components/Meta";
+import Window from "../components/Window";
 
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -140,7 +141,9 @@ const Page = () => {
             flex-grow: 1;
           `}
         >
-          <Editor value={code} onValueChange={(code) => setCode(code)} />
+          <Window>
+            <Editor value={code} onValueChange={(code) => setCode(code)} />
+          </Window>
           <Button onClick={newTrack}>run</Button>
           <Button onClick={save}>save</Button>
         </div>
