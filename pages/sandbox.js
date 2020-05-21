@@ -111,6 +111,7 @@ const Page = () => {
 
   const keyMap = {
     search: "s",
+    run: "r",
   };
 
   const handlers = {
@@ -119,6 +120,7 @@ const Page = () => {
       const body = await axios.post("/api/search", { query });
       setTrack(body.data);
     },
+    run: () => newTrack(),
   };
 
   return (
