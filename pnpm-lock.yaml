@@ -4,6 +4,7 @@ dependencies:
   '@mdx-js/loader': 1.6.1_react@16.13.1
   '@next/mdx': 9.4.1_@mdx-js+loader@1.6.1
   axios: 0.19.2
+  deta: 0.0.4
   didyoumean2: 4.0.0
   dotenv: 8.2.0
   emotion: 10.0.27
@@ -2847,6 +2848,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Q0I4pfFrv2VPd34/vfLrFOoRmlYj3OV50i7fskps1jZWK1kApMWWT9G6RRUeYedLcBDIhnSDaUvJMb3AhUlaEA==
+  /deta/0.0.4:
+    dependencies:
+      node-fetch: 2.6.0
+    dev: false
+    resolution:
+      integrity: sha512-3JRaSCEaxpGuT75NRkQ3GZQ7ofJcoU+/VY7XKkIaPep6KG6D29L28t8ELetcr0+dnyApTsXnazP5PMRLAcN/Bg==
   /detab/2.0.3:
     dependencies:
       repeat-string: 1.6.1
@@ -7575,6 +7582,7 @@ specifiers:
   '@mdx-js/loader': ^1.6.1
   '@next/mdx': ^9.4.1
   axios: ^0.19.2
+  deta: ^0.0.4
   didyoumean2: ^4.0.0
   dotenv: ^8.2.0
   emotion: ^10.0.27

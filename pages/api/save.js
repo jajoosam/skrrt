@@ -1,8 +1,6 @@
-const uniq = require("uniqid");
-import { set } from "../../utils/store";
+import { radios } from "../../utils/store";
 
 export default async (req, res) => {
-  const id = uniq();
-  await set(id, req.body);
-  res.json({ id });
+  let radio = await radios.put(req.body);
+  res.json({ id: radio.key });
 };

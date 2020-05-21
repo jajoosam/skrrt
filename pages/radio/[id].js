@@ -130,9 +130,8 @@ const Page = ({ text, json, translated, id }) => {
 export default Page;
 
 export async function getServerSideProps(context) {
-  const { get } = require("../../utils/store");
-  let body = await get(context.params.id);
-  let { text, json, translated } = body.data;
+  const { radios } = require("../../utils/store");
+  let { text, json, translated } = await radios.get(context.params.id);
   return {
     props: { text, json, translated, id: context.params.id },
   };

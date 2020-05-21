@@ -13,6 +13,7 @@
     "@mdx-js/loader": "^1.6.1",
     "@next/mdx": "^9.4.1",
     "axios": "^0.19.2",
+    "deta": "^0.0.4",
     "didyoumean2": "^4.0.0",
     "dotenv": "^8.2.0",
     "emotion": "^10.0.27",
