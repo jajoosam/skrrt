@@ -101,7 +101,9 @@ const Page = () => {
       console.log(track);
       player.cuePlaylist({
         listType: "search",
-        list: `${track.name} ${track.artists[0]}`,
+        list: `${track.name} ${track.artists[0]} ${
+          filter.append ? filter.append : ""
+        }`,
         suggestedQuality: "medium",
       });
     }

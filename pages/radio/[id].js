@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import YouTube from "react-youtube";
 import { css } from "emotion";
@@ -20,16 +20,22 @@ const Page = ({ text, json, translated, id }) => {
   let [track, setTrack] = useState({ id: null });
   const router = useRouter();
 
+  useEffect(() => {
+    if (player) {
+      console.log(track);
+      player.cuePlaylist({
+        listType: "search",
+        list: `${track.name} ${track.artists[0]} ${
+          json.append ? json.append : ""
+        }`,
+        suggestedQuality: "medium",
+      });
+    }
+  }, [track]);
+
   const newTrack = async () => {
     let recommendations = await axios.post(`/api/recommend`, translated);
     setTrack(recommendations.data[0]);
-    player.cuePlaylist({
-      listType: "search",
-      list: `${recommendations.data[0].name} ${recommendations.data[0].artists[0]}`,
-      suggestedQuality: "medium",
-    });
-
-    // setTimeout(() => player.playVideo(), 1000);
   };
 
   const edit = () => {
