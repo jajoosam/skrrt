@@ -48,7 +48,7 @@ const Page = () => {
     setTrack(recommendations.data[0]);
   };
 
-  const save = async () => {
+  const share = async () => {
     if (!translated.filter) {
       return alert("You need to run at least once before you save.");
     }
@@ -176,7 +176,7 @@ const Page = () => {
                 <Editor value={code} onValueChange={(code) => setCode(code)} />
               </Window>
               <Button onClick={newTrack}>run</Button>
-              <Button onClick={save}>save</Button>
+              <Button onClick={share}>share</Button>
               {track.id && filter.lyrics && (
                 <div>
                   <Lyrics track={track} />

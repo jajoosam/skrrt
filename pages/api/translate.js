@@ -1,5 +1,4 @@
 const spotify = require("../../utils/spotify.js");
-const axios = require("axios");
 const getClosest = require("didyoumean2").default;
 
 const genres = require("../../utils/genres.json");

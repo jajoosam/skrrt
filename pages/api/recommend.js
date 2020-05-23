@@ -1,5 +1,4 @@
 const spotify = require("../../utils/spotify.js");
-const axios = require("axios");
 
 export default async (req, res) => {
   if (!spotify.getAccessToken()) {
